@@ -7,11 +7,12 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
 	    <link rel="icon" type="image/png" href="icon.png" />
 
 	</head>
 
-	<body>
+	<body style="background-color: rgb(241, 242, 246);">
 
 	<?php
 
@@ -21,8 +22,8 @@
 	   $user_lat = $geoPlugin_array['geoplugin_latitude'];
 	   $user_lng = $geoPlugin_array['geoplugin_longitude'];
 
-	   $user_lat = round($geoPlugin_array['geoplugin_latitude']);
-	   $user_lng = round($geoPlugin_array['geoplugin_longitude']);
+	   $user_lat_arrondis = round($geoPlugin_array['geoplugin_latitude']);
+	   $user_lng_arrondis = round($geoPlugin_array['geoplugin_longitude']);
 
 	 //Mise en place de l'API Deezer
 
@@ -68,9 +69,10 @@
 
 	</body>
 
+    <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-</html>
-
-<!--   ©Tixis ~ 2014-->
+</htmL>

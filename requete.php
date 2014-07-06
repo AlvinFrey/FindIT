@@ -80,7 +80,7 @@
 
 	 			echo '<u><h1>'.$artistes_nom.' : </h1></u>';
 
-			    echo '<img src='.$artistes_image.'></img>';
+	 			echo '<img src='.$artistes_image.'></img>';
 
 			    echo '<br/>';
 			 	
@@ -98,9 +98,24 @@
 
 	 			echo '<a href="'.$concerts_uri.'"><p>Réserver une place</p></a>';
 
-				if($concerts_lat==$user_lat&&$concerts_long==$user_lng){
+				if($concerts_lat==$user_lat_arrondis&&$concerts_long==$user_lat_arrondis){
 
-					echo '<u style="color : red;"><h3 style="color : red;"><img src="http://findicons.com/files/icons/1034/elementary/16/emblem_danger.png"></img> Ce concert se trouve près de chez vous <img src="http://findicons.com/files/icons/1034/elementary/16/emblem_danger.png"></img></h3></u>';
+					function distance($lat1, $long1, $lat2, $long2){
+
+
+						$theta = $long1 - $long2;
+
+						$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+						$dist = acos($dist);
+						$dist = rad2deg($dist);
+
+						$km = $dist * 60 * 1.1515;
+
+						return($km * 1.609344);
+
+					}
+
+					echo '<u style="color : red;"><h4 style="color : red;"><img src="http://findicons.com/files/icons/1034/elementary/16/emblem_danger.png"></img> Ce concert se trouve près de chez vous (';echo round(distance($user_lat, $user_lng, $concerts_lat, $concerts_long)) . ' Km )<img src="http://findicons.com/files/icons/1034/elementary/16/emblem_danger.png"></img></h4></u>';
 
 				}
 
@@ -115,5 +130,3 @@
 ?>
 
 </center>
-
-<!--   ©Tixis ~ 2014-->
