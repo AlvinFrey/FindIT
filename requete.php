@@ -97,6 +97,8 @@
 	 			echo '<br/>';
 
 	 			echo '<a href="'.$concerts_uri.'"><p>Réserver une place</p></a>';
+				
+				echo '<a href="https://www.google.fr/maps/dir/'. $ville_user .'/'. $sortie_songkick_json->resultsPage->results->event[$i_songkick]->location->city .'/am=t/data=!4m13!4m12!1m5!1m1!1"><p>Itinéraire pour aller à ce concert</p></a>';
 
 				if($concerts_lat==$user_lat_arrondis&&$concerts_long==$user_lat_arrondis){
 

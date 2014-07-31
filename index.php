@@ -24,6 +24,13 @@
 
 	   $user_lat_arrondis = round($geoPlugin_array['geoplugin_latitude']);
 	   $user_lng_arrondis = round($geoPlugin_array['geoplugin_longitude']);
+	   
+	 //Récupération de la ville de l'utilisateur
+
+	   $url_ville = "http://maps.googleapis.com/maps/api/geocode/xml?latlng=$user_lat,$user_lng&sensor=false";
+	   $fichier_ville = file_get_contents($url_ville);
+	   $xml_ville = simplexml_load_string($fichier_ville);
+	   $ville_user = $xml_ville->result->address_component[2]->long_name;
 
 	 //Mise en place de l'API Deezer
 
