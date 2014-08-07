@@ -90,7 +90,7 @@
 	 			
 	 			echo '<br/>';
 
-	 			echo '<img style="max-width: 100%;height: auto;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;" border="0" src=http://maps.googleapis.com/maps/api/staticmap?center='.$concerts_lat.','.$concerts_long.'&zoom=13&size=600x300&maptype=roadmap&markers=color:blue|label:S|'.$concerts_lat.','.$concerts_long.'></img>';		
+	 			echo '<img style="max-width: 100%;height: auto;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;" border="0" src=http://maps.googleapis.com/maps/api/staticmap?center='.$concerts_lat.','.$concerts_long.'&zoom=13&size=600x300&maptype=roadmap&key=CLE_API_GOOGLE_MAP&markers=color:blue|label:S|'.$concerts_lat.','.$concerts_long.'></img>';		
 
 	 			echo '<br/>';
 
